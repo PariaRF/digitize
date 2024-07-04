@@ -14,9 +14,9 @@
         </div>
         <div class="slate-800 font-bold text-lg">ساعت هوشمند</div>
         <div class="bg-white shadow-lg rounded slate-800 w-9 h-9 flex justify-center items-center">
-             <svg class="w-5 h-5 stroke-slate-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <svg class="w-5 h-5 stroke-slate-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                </svg>                  
+            </svg>                  
         </div>
     </div>
 
@@ -35,11 +35,36 @@
             <span class="text-sm font-medium text-slate-800 whitespace-nowrap">فیلتر: برند اپل</span>
         </div>
     </section>
-    <div class="grid grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)] md:gap-8 px-4">
+
+    <div class="grid grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)] md:gap-8 pl-4">
         <!-- sidebar -->
         <div class="bg-white p-4 col-span-4 lg:col-span-3 row-span-2 hidden md:block ">sidebar</div>
         <!-- sort section -->
-        <div class="bg-white p-4 col-span-8 lg:col-span-9 hidden md:block">sort</div>
+        <div class="col-span-8 lg:col-span-9 hidden md:block mt-2">
+            <div x-data="{sort : 1, activeClass: 'text-slate-800 font-bold'}" class="bg-white px-4 flex items-center gap-x-4 text-gray-400 rounded-lg">
+                <div class="bg-orange-100 rounded-md p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 y-5 stroke-orange-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25" />
+                    </svg> 
+                </div>
+                <button @click="sort = 1" :class="sort === 1 ? activeClass : ''" class="py-4 relative">
+                    <span>محبوب ترین محصول</span>
+                    <span x-show="sort === 1" class="w-2 h-2 bg-orange-600 rounded-full absolute top-1 left-0"></span>
+                </button>
+                <button @click="sort = 2" :class="sort === 2 ? activeClass : ''" class="py-4 relative">
+                    <span> پر بازدیدترین محصول</span>
+                    <span x-show="sort === 2" class="w-2 h-2 bg-orange-600 rounded-full absolute top-1 left-0"></span>
+                </button>
+                <button @click="sort = 3" :class="sort === 3 ? activeClass : ''" class="py-4 relative">
+                    <span>گرانترین محصول</span>
+                    <span x-show="sort === 3" class="w-2 h-2 bg-orange-600 rounded-full absolute top-1 left-0"></span>
+                </button>
+                <button @click="sort = 4" :class="sort === 4 ? activeClass : ''" class="py-4 relative">
+                    <span>ارزانترین محصول</span>
+                    <span x-show="sort === 4" class="w-2 h-2 bg-orange-600 rounded-full absolute top-1 left-0"></span>
+                </button>
+            </div>
+        </div>
         <!-- product section -->
         <div class="col-span-12 md:col-span-8 lg:col-span-9">
             <section 
