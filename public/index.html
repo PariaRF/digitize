@@ -35,52 +35,60 @@
             <span class="text-sm font-medium text-slate-800 whitespace-nowrap">فیلتر: برند اپل</span>
         </div>
     </section>
-    
-    <!-- products -->
-    <section 
-    x-data = "{
-        products:[
-            {id: 1, title: 'ساعت هوشمند اپل سری ۷', price: '۱۲۳,۴۵۶,۸۹۰ تومان'},
-            {id: 2, title: 'ساعت هوشمند اپل سری ۴', price: '۱۲۳,۴۵۶,۸۹۰ تومان'},
-            {id: 3, title: 'ساعت هوشمند اپل سری ۵', price: '۱۲۳,۴۵۶,۸۹۰ تومان'},
-            {id: 4, title: 'ساعت هوشمند اپل سری ۷', price: '۱۲۳,۴۵۶,۸۹۰ تومان'},
-            {id: 5, title: 'ساعت هوشمند اپل سری ۶', price: '۱۲۳,۴۵۶,۸۹۰ تومان'},
-            {id: 6, title: 'ساعت هوشمند اپل سری ۷', price: '۱۲۳,۴۵۶,۸۹۰ تومان'},
-        ]
-    }" 
-    class="grid gap-x-2 gap-y-8 grid-cols-2 px-4 sm:gap-x-4 md:gap-x-8 md:gap-y-10 md:grid-cols-3 lg:grid-cols-4">
-    <!-- single product -->
-    <template x-for="product in products" :key="product.id">
-        <div class="bg-white rounded-xl shadow-md flex flex-col items-center p-2">
-            <div class="bg-gray-200 w-[100%] h-[144] rounded-xl mb-3">
-                <img class="w-[100%] h-[100%] object-contain" src="/assets/images/Cart/1.png" alt="watch-product">
-            </div>
-            <div class="flex items-center justify-between w-full mb-3">
-                <span class="text-slate-200 text-sm md:text-base">اپل</span>
-                <div x-data="{color: 'red'}" class="flex items-center">
-                    <div @click="color = 'red'" :class="color === 'red' ? 'ring-1 ring-red-400' : ''" class="w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center rounded-full cursor-pointer bg-red-400 border-2 border-white">
-                        <svg x-show="color === 'red'" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5 stroke-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                        </svg>                          
+    <div class="grid grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)] md:gap-8 px-4">
+        <!-- sidebar -->
+        <div class="bg-white p-4 col-span-4 lg:col-span-3 row-span-2 hidden md:block ">sidebar</div>
+        <!-- sort section -->
+        <div class="bg-white p-4 col-span-8 lg:col-span-9 hidden md:block">sort</div>
+        <!-- product section -->
+        <div class="col-span-12 md:col-span-8 lg:col-span-9">
+            <section 
+            x-data = "{
+                products:[
+                    {id: 1, title: 'ساعت هوشمند اپل سری ۷', price: '۱۲۳,۴۵۶,۸۹۰ تومان'},
+                    {id: 2, title: 'ساعت هوشمند اپل سری ۴', price: '۱۲۳,۴۵۶,۸۹۰ تومان'},
+                    {id: 3, title: 'ساعت هوشمند اپل سری ۵', price: '۱۲۳,۴۵۶,۸۹۰ تومان'},
+                    {id: 4, title: 'ساعت هوشمند اپل سری ۷', price: '۱۲۳,۴۵۶,۸۹۰ تومان'},
+                    {id: 5, title: 'ساعت هوشمند اپل سری ۶', price: '۱۲۳,۴۵۶,۸۹۰ تومان'},
+                    {id: 6, title: 'ساعت هوشمند اپل سری ۷', price: '۱۲۳,۴۵۶,۸۹۰ تومان'},
+                ]
+            }" 
+            class="grid gap-x-2 gap-y-8 grid-cols-2 sm:gap-x-4 md:gap-x-6 md:gap-y-10 lg:grid-cols-4">
+            <!-- single product -->
+                <template x-for="product in products" :key="product.id">
+                    <div class="bg-white rounded-xl shadow-md flex flex-col items-center p-2">
+                        <div class="bg-gray-200 rounded-xl p-2 mb-3 w-full flex justify-center items-center h-[144]">
+                            <img src="/assets/images/Home/apple-watch-7.png" alt="watch-product">
+                        </div>
+                        <div class="flex items-center justify-between w-full mb-3">
+                            <span class="text-slate-200 text-sm md:text-base">اپل</span>
+                            <div x-data="{color: 'red'}" class="flex items-center">
+                                <div @click="color = 'red'" :class="color === 'red' ? 'ring-1 ring-red-400' : ''" class="w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center rounded-full cursor-pointer bg-red-400 border-2 border-white">
+                                    <svg x-show="color === 'red'" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5 stroke-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>                          
+                                </div>
+                                <div @click="color = 'blue'" :class="color === 'blue' ? 'ring-1 ring-blue-400' : ''" class="w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center rounded-full cursor-pointer bg-blue-400 border-2 border-white -mr-1.5">
+                                    <svg x-show="color === 'blue'" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 s sm:w-5 sm:h-5 stroke-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg> 
+                                </div>
+                                <div @click="color = 'green'" :class="color === 'green' ? 'ring-1 ring-green-400' : ''" class="w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center rounded-full cursor-pointer bg-green-400 border-2 border-white -mr-1.5">
+                                    <svg x-show="color === 'green'" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 str sm:w-5 sm:h-5 stroke-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg> 
+                                </div>
+                            </div>
+                        </div>
+                        <div x-text="product.title" class="text-slate-800 text-xs font-bold mb-2 sm:text-base"></div>
+                        <div x-text="product.price" class="text-orange-600 font-medium text-center mb-3 sm:text-lg"></div> 
+                        <div class="bg-gray-100 w-full h-[1] mb-2"></div> 
+                        <button class="w-ful py-1 font-bold text-orange-600 md:text-lg">مشاهده و سفارش</button>
                     </div>
-                    <div @click="color = 'blue'" :class="color === 'blue' ? 'ring-1 ring-blue-400' : ''" class="w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center rounded-full cursor-pointer bg-blue-400 border-2 border-white -mr-1.5">
-                        <svg x-show="color === 'blue'" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 s sm:w-5 sm:h-5 stroke-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                        </svg> 
-                    </div>
-                    <div @click="color = 'green'" :class="color === 'green' ? 'ring-1 ring-green-400' : ''" class="w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center rounded-full cursor-pointer bg-green-400 border-2 border-white -mr-1.5">
-                        <svg x-show="color === 'green'" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 str sm:w-5 sm:h-5 stroke-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                        </svg> 
-                    </div>
-                </div>
-            </div>
-            <div x-text="product.title" class="text-slate-800 text-xs whitespace-nowrap font-bold mb-2 md:text-base"></div>
-            <div x-text="product.price" class="text-orange-600 font-medium text-center mb-3"></div> 
-            <div class="bg-gray-100 w-full h-[1] mb-2"></div> 
-            <button class="w-ful py-1 font-bold text-orange-600 md:text-lg">مشاهده و سفارش</button>
+                </template>
+            </section>
         </div>
-    </template>
-    </section>
+    </div>
+    
 </body>
 </html>
