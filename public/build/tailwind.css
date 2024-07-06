@@ -1027,17 +1027,14 @@ video {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.pb-96{
-  padding-bottom: 24rem;
+.pb-20{
+  padding-bottom: 5rem;
 }
 .pr-2{
   padding-right: 0.5rem;
 }
 .pr-6{
   padding-right: 1.5rem;
-}
-.pb-20{
-  padding-bottom: 5rem;
 }
 .text-center{
   text-align: center;
@@ -1371,10 +1368,6 @@ video {
 
   .lg\:col-span-9{
     grid-column: span 9 / span 9;
-  }
-
-  .lg\:w-2\/3{
-    width: 66.666667%;
   }
 
   .lg\:w-1\/3{
